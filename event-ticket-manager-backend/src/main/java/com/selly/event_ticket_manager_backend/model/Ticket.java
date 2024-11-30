@@ -18,7 +18,7 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne
     private User seller;
@@ -36,5 +36,6 @@ public class Ticket {
     private int quantity;
 
     @ManyToOne
+    @JoinColumn(name = "event_id")
     private Event event;
 }

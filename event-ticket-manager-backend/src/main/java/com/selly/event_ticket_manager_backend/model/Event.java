@@ -21,7 +21,7 @@ public class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @NotNull
     private String eventName;
@@ -42,6 +42,7 @@ public class Event {
     private int price;
 
     @ManyToOne
+    @JoinColumn(name = "created_by_id", nullable = false)
     private User createdBy;
 
     @OneToMany(mappedBy = "event")
